@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "target": "ES2018",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "lib": [
+      "ESNext",
+      "ESNext.AsyncIterable",
+      "DOM"
+    ],
+    "esModuleInterop": true,
+    "allowJs": true,
+    "sourceMap": true,
+    "strict": true,
+    "noEmit": true,
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "./src/*"
+      ],
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "types": [
+      "@types/node",
+      "@nuxt/types",
+      "vuetify",
+      "@nuxtjs/axios",
+    ],
+    "typeRoots": [
+      "src/@types"
+    ]
+  },
+  "files": [
+    "vue-shim.d.ts",
+    "nuxt.config.ts"
+  ],
+  "include": [
+    "./src/**/*",
+    "./env/**/*",
+    "./test/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    ".nuxt",
+    "dist"
+  ]
+}

@@ -1,0 +1,10 @@
+version: '3'
+services:
+  nuxt:
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile.nuxt.dev
+    ports:
+      - 3000:3000
+    volumes:
+      - ../nuxt:/usr/src/app

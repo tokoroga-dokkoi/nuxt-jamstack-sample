@@ -1,0 +1,35 @@
+# マルチステージビルドをやめてビルド時間を短縮した版（あまりにもマルチステージビルドに時間がかかるので・・・）
+FROM node:15-alpine
+
+WORKDIR /usr/src/app
+
+# OSパッケージインストール
+# タイムゾーンをJSTにする
+RUN apk --update add tzdata && \
+    cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
+    apk del tzdata && \
+    rm -rf /var/cache/apk/*
+
+# git isntall
+RUN apk add git && \
+    apk add --no-cache make gcc g++ python
+RUN npm install -g @vue/cli nuxt create-nuxt-app
+
+# JavaScriptパッケージインストール
+COPY ./nuxt/package.json ./nuxt/yarn.lock ./
+RUN yarn install \
+  --prefer-offline \
+  --frozen-lockfile \
+  --non-interactive \
+  --production=false
+
+# ソースコードコピー
+COPY ./nuxt .
+
+# ビルド
+#RUN yarn build
+
+ENV HOST=0.0.0.0
+EXPOSE 3001
+
+CMD [ "yarn", "dev" ]

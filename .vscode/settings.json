@@ -1,0 +1,47 @@
+{
+	"eslint.workingDirectories": [
+    "nuxt"
+	],
+	"eslint.options": {
+		"configFile": "./.eslintrc.js"
+	},
+	"editor.tabSize": 2,
+	"eslint.validate": [
+		"javascript",
+		"typescript",
+	],
+	"editor.formatOnSave": true,
+	"editor.formatOnType": true,
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[vue]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"files.trimTrailingWhitespace": true,
+	"files.trimFinalNewlines": true,
+	"cSpell.userWords": [
+		"nuxt",
+		"nuxtjs",
+		"Nuxt",
+		"vuetify",
+		"jamstack"
+	],
+	"cSpell.enabled": true,
+	"vetur.grammar.customBlocks": {
+		"docs": "md",
+		"i18n": "json"
+	},
+}
